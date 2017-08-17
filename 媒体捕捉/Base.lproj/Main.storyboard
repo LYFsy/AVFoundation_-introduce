@@ -45,14 +45,56 @@
                                             <action selector="switchCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5F-vJ-1ND"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biC-Kw-ysC">
+                                        <rect key="frame" x="10" y="25" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="jHg-mp-m6Z"/>
+                                            <constraint firstAttribute="width" constant="25" id="use-i5-W8k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="auto"/>
+                                        <connections>
+                                            <action selector="autoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXI-sl-WFb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUV-rI-9VC">
+                                        <rect key="frame" x="85" y="25" width="30" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="off"/>
+                                        <connections>
+                                            <action selector="offClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLM-8c-gEk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kme-pC-rQD">
+                                        <rect key="frame" x="45" y="25" width="30" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="on"/>
+                                        <connections>
+                                            <action selector="onClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qvd-n2-PIO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="biC-Kw-ysC" firstAttribute="top" secondItem="B6S-BW-JtP" secondAttribute="top" constant="25" id="3pd-7V-x7a"/>
+                                    <constraint firstItem="biC-Kw-ysC" firstAttribute="leading" secondItem="B6S-BW-JtP" secondAttribute="leading" constant="10" id="5xr-A3-34C"/>
                                     <constraint firstItem="AcG-Mb-Xqd" firstAttribute="centerX" secondItem="B6S-BW-JtP" secondAttribute="centerX" id="6xQ-eC-mWy"/>
                                     <constraint firstAttribute="bottom" secondItem="AcG-Mb-Xqd" secondAttribute="bottom" constant="60" id="BGG-cm-Lbs"/>
+                                    <constraint firstItem="AUV-rI-9VC" firstAttribute="leading" secondItem="kme-pC-rQD" secondAttribute="trailing" constant="10" id="NJC-ct-Q6U"/>
                                     <constraint firstItem="LoV-l4-ovO" firstAttribute="top" secondItem="B6S-BW-JtP" secondAttribute="top" constant="20" id="OEF-NQ-Q00"/>
+                                    <constraint firstItem="kme-pC-rQD" firstAttribute="top" secondItem="biC-Kw-ysC" secondAttribute="top" id="ZKo-ex-bkv"/>
+                                    <constraint firstItem="kme-pC-rQD" firstAttribute="leading" secondItem="biC-Kw-ysC" secondAttribute="trailing" constant="10" id="bvU-Ic-s1I"/>
+                                    <constraint firstItem="AUV-rI-9VC" firstAttribute="top" secondItem="biC-Kw-ysC" secondAttribute="top" id="g8K-Ek-9Dm"/>
                                     <constraint firstAttribute="trailing" secondItem="LoV-l4-ovO" secondAttribute="trailing" constant="20" id="nKA-vL-aQR"/>
+                                    <constraint firstItem="AUV-rI-9VC" firstAttribute="bottom" secondItem="biC-Kw-ysC" secondAttribute="bottom" id="nXx-dk-hgv"/>
+                                    <constraint firstItem="kme-pC-rQD" firstAttribute="bottom" secondItem="biC-Kw-ysC" secondAttribute="bottom" id="yPF-UA-b1Q"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hxr-jS-Cqp" appends="YES" id="Uvd-Q2-WZM"/>
+                                    <outletCollection property="gestureRecognizers" destination="6kM-QG-XvJ" appends="YES" id="8gf-qA-Fpa"/>
+                                    <outletCollection property="gestureRecognizers" destination="ocJ-UM-K3I" appends="YES" id="BX3-Tt-y7k"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,11 +106,31 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doubleTap" destination="6kM-QG-XvJ" id="lK9-9a-K7I"/>
+                        <outlet property="pinchGesture" destination="ocJ-UM-K3I" id="BHE-Oi-290"/>
                         <outlet property="preView" destination="B6S-BW-JtP" id="3B4-cw-9NT"/>
+                        <outlet property="singleTap" destination="hxr-jS-Cqp" id="twd-wb-Bqd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hxr-jS-Cqp">
+                    <connections>
+                        <action selector="focusClick:" destination="BYZ-38-t0r" id="bvA-tH-0Vh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="6kM-QG-XvJ">
+                    <connections>
+                        <action selector="showExposureClick:" destination="BYZ-38-t0r" id="yeu-eb-0nG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="ocJ-UM-K3I">
+                    <connections>
+                        <action selector="updateScaleClick:" destination="BYZ-38-t0r" id="fZd-kv-plB"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="OHv-dp-Ka0"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="74.212893553223395"/>
         </scene>
     </scenes>
 </document>

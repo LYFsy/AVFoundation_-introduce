@@ -322,6 +322,7 @@
 				1CFC8C4E1F445A16006D701B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
