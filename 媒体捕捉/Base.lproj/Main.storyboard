@@ -35,11 +35,23 @@
                                             <action selector="photoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1P-fa-NrD"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoV-l4-ovO">
+                                        <rect key="frame" x="278" y="20" width="77" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="u12-ps-98g"/>
+                                        </constraints>
+                                        <state key="normal" title="摄像头转换"/>
+                                        <connections>
+                                            <action selector="switchCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5F-vJ-1ND"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="AcG-Mb-Xqd" firstAttribute="centerX" secondItem="B6S-BW-JtP" secondAttribute="centerX" id="6xQ-eC-mWy"/>
                                     <constraint firstAttribute="bottom" secondItem="AcG-Mb-Xqd" secondAttribute="bottom" constant="60" id="BGG-cm-Lbs"/>
+                                    <constraint firstItem="LoV-l4-ovO" firstAttribute="top" secondItem="B6S-BW-JtP" secondAttribute="top" constant="20" id="OEF-NQ-Q00"/>
+                                    <constraint firstAttribute="trailing" secondItem="LoV-l4-ovO" secondAttribute="trailing" constant="20" id="nKA-vL-aQR"/>
                                 </constraints>
                             </view>
                         </subviews>
